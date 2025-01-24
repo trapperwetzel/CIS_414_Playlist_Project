@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/CIS414PlaylistProject20250124000103/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsConnection_48F2B98F26",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/playlist-project-cis-414/databases/CIS414_Playlist_Project",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:Connection"
+    }
+  }
+}
