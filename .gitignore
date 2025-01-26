@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/appsettings.json
+/Properties/serviceDependencies.json
+/Properties/serviceDependencies.local.json
+/Properties/serviceDependencies.CIS414PlaylistProject20250124000103 - Web Deploy.json
