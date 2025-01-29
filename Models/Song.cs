@@ -2,31 +2,48 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CIS_414_Playlist_Project.Models
-
 {
-    internal class Song
+    public class Song
     {
-
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int SongId { get; }
+        public int SongId { get;  set; }
 
-        private static Artist SongArtist = new Artist();
-        public string ArtistName { get; } = SongArtist.ArtistName;
-        public string SongTitle { get; } = "N/A";
-        public string DateReleased { get; } = "??/??/???";
+        [ForeignKey("ArtistID")]
+        public int ArtistId { get;  set; }
 
-        
+        [ForeignKey("ArtistName")]
+        public string ArtistName { get;  set; } = "N/A";
+
+        [ForeignKey("Genre")]
+        public string Genre { get;  set; } = "N/A";
+
+        public Artist Artist { get;  set; }
+        public Genre SongGenre { get;  set; }
+
+        public string SongTitle { get;  set; } = "N/A";
+        public string DateReleased { get;  set; } = "??/??/???";
+
+        // Many-to-many relationship with Mood
+        public virtual ICollection<Mood> Moods { get;  set; } = new List<Mood>();
+
         public Song()
         {
-
         }
-        public Song(string aArtistName,int aSongID, string aSongTitle, string aDateReleased)
+
+        public Song(int artistId, string songTitle, string dateReleased)
         {
-            this.ArtistName = aArtistName;
-            this.SongId = aSongID;
-            this.SongTitle = aSongTitle;
-            this.DateReleased = aDateReleased;
+            ArtistId = artistId;
+            SongTitle = songTitle;
+            DateReleased = dateReleased;
+        }
+
+        // Method to add a mood to the song
+        public void AddMood(Mood mood)
+        {
+            if (!Moods.Contains(mood))
+            {
+                Moods.Add(mood);
+            }
         }
     }
 }

@@ -4,6 +4,7 @@ using CIS_414_Playlist_Project.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CIS_414_Playlist_Project.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250127103230_AddedSongArtistRelation")]
+    partial class AddedSongArtistRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -71,48 +74,6 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                     b.HasKey("MoodId");
 
                     b.ToTable("Moods");
-
-                    b.HasData(
-                        new
-                        {
-                            MoodId = 1,
-                            MoodName = "Happy"
-                        },
-                        new
-                        {
-                            MoodId = 2,
-                            MoodName = "Sad"
-                        },
-                        new
-                        {
-                            MoodId = 3,
-                            MoodName = "Energetic"
-                        },
-                        new
-                        {
-                            MoodId = 4,
-                            MoodName = "Calm"
-                        },
-                        new
-                        {
-                            MoodId = 5,
-                            MoodName = "Romantic"
-                        },
-                        new
-                        {
-                            MoodId = 6,
-                            MoodName = "Angry"
-                        },
-                        new
-                        {
-                            MoodId = 7,
-                            MoodName = "Melancholic"
-                        },
-                        new
-                        {
-                            MoodId = 8,
-                            MoodName = "Upbeat"
-                        });
                 });
 
             modelBuilder.Entity("CIS_414_Playlist_Project.Models.Song", b =>
@@ -126,20 +87,9 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                     b.Property<int>("ArtistId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ArtistName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("DateReleased")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Genre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("SongGenreGenreId")
-                        .HasColumnType("int");
 
                     b.Property<string>("SongTitle")
                         .IsRequired()
@@ -148,8 +98,6 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                     b.HasKey("SongId");
 
                     b.HasIndex("ArtistId");
-
-                    b.HasIndex("SongGenreGenreId");
 
                     b.ToTable("Songs");
                 });
@@ -352,21 +300,6 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("MoodSong", b =>
-                {
-                    b.Property<int>("MoodsMoodId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SongsSongId")
-                        .HasColumnType("int");
-
-                    b.HasKey("MoodsMoodId", "SongsSongId");
-
-                    b.HasIndex("SongsSongId");
-
-                    b.ToTable("MoodSong");
-                });
-
             modelBuilder.Entity("CIS_414_Playlist_Project.Models.Song", b =>
                 {
                     b.HasOne("CIS_414_Playlist_Project.Models.Artist", "Artist")
@@ -375,15 +308,7 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("CIS_414_Playlist_Project.Models.Genre", "SongGenre")
-                        .WithMany()
-                        .HasForeignKey("SongGenreGenreId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Artist");
-
-                    b.Navigation("SongGenre");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -433,21 +358,6 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("MoodSong", b =>
-                {
-                    b.HasOne("CIS_414_Playlist_Project.Models.Mood", null)
-                        .WithMany()
-                        .HasForeignKey("MoodsMoodId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("CIS_414_Playlist_Project.Models.Song", null)
-                        .WithMany()
-                        .HasForeignKey("SongsSongId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
