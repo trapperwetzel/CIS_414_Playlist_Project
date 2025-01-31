@@ -1,7 +1,8 @@
-﻿
+﻿// The Artist class represents a musical artist which 
+// includes properties for the artist's ID, name, and a collection of songs associated with the artist.
+// Trapper W 1/31/2025 
+
 using System.ComponentModel.DataAnnotations;
-
-
 namespace CIS_414_Playlist_Project.Models
 {
     public class Artist

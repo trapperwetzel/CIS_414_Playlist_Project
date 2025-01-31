@@ -6,40 +6,61 @@ namespace CIS_414_Playlist_Project.Models
     public class Song
     {
         [Key]
-        public int SongId { get;  set; }
+        public int SongId { get; set; }
 
-        [ForeignKey("ArtistID")]
-        public int ArtistId { get;  set; }
+        [Required]
+        public string SongTitle { get; set; }
 
-        [ForeignKey("ArtistName")]
-        public string ArtistName { get;  set; } = "N/A";
+        [ForeignKey("Artist")]
+        public int ArtistId { get; set; }
 
-        [ForeignKey("Genre")]
-        public string Genre { get;  set; } = "N/A";
+        [Required]
+        public string ArtistName { get; set; }
 
-        public Artist Artist { get;  set; }
-        public Genre SongGenre { get;  set; }
+        [Required]
+        public string DateReleased { get; set; }
 
-        public string SongTitle { get;  set; } = "N/A";
-        public string DateReleased { get;  set; } = "??/??/???";
-
-        // Many-to-many relationship with Mood
-        public virtual ICollection<Mood> Moods { get;  set; } = new List<Mood>();
+        // Navigation properties
+        public virtual Artist Artist { get; set; }
+        public virtual ICollection<Genre> Genres { get; set; }
+        public virtual ICollection<Mood> Moods { get; set; }
 
         public Song()
         {
+            SongTitle = "N/A";
+            ArtistName = "N/A";
+            DateReleased = "??/??/???";
+            Genres = new List<Genre>();
+            Moods = new List<Mood>();
         }
 
-        public Song(int artistId, string songTitle, string dateReleased)
+        public Song(string songTitle, string artistName, string dateReleased)
+        {
+            SongTitle = songTitle;
+            ArtistName = artistName;
+            DateReleased = dateReleased;
+            Genres = new List<Genre>();
+            Moods = new List<Mood>();
+        }
+
+        public Song(int artistId, string artistName, string songTitle, string dateReleased)
+            : this(songTitle, artistName, dateReleased)
         {
             ArtistId = artistId;
-            SongTitle = songTitle;
-            DateReleased = dateReleased;
         }
 
-        // Method to add a mood to the song
+        public void AddGenre(Genre genre)
+        {
+            Genres ??= new List<Genre>();
+            if (!Genres.Contains(genre))
+            {
+                Genres.Add(genre);
+            }
+        }
+
         public void AddMood(Mood mood)
         {
+            Moods ??= new List<Mood>();
             if (!Moods.Contains(mood))
             {
                 Moods.Add(mood);

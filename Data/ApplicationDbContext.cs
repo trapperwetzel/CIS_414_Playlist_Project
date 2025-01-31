@@ -19,11 +19,23 @@ namespace CIS_414_Playlist_Project.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            // Configure Song-Genre many-to-many relationship
+            modelBuilder.Entity<Song>()
+                .HasMany(s => s.Genres)
+                .WithMany(g => g.Songs)
+                .UsingEntity(j => j.ToTable("SongGenres"));
 
-            // Configure many-to-many relationship between Song and Mood
+            // Configure Song-Mood many-to-many relationship
             modelBuilder.Entity<Song>()
                 .HasMany(s => s.Moods)
-                .WithMany(m => m.Songs);
+                .WithMany(m => m.Songs)
+                .UsingEntity(j => j.ToTable("SongMoods"));
+
+            // Configure Song-Artist relationship
+            modelBuilder.Entity<Song>()
+                .HasOne(s => s.Artist)
+                .WithMany(a => a.Songs)
+                .HasForeignKey(s => s.ArtistId);
 
             // Seed Moods
             modelBuilder.Entity<Mood>().HasData(

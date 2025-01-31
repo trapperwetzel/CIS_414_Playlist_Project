@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace CIS_414_Playlist_Project.Data.Migrations
+namespace CIS_414_Playlist_Project.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250127103230_AddedSongArtistRelation")]
-    partial class AddedSongArtistRelation
+    [Migration("20250131063440_InitialCreatex2")]
+    partial class InitialCreatex2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,6 +74,48 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                     b.HasKey("MoodId");
 
                     b.ToTable("Moods");
+
+                    b.HasData(
+                        new
+                        {
+                            MoodId = 1,
+                            MoodName = "Happy"
+                        },
+                        new
+                        {
+                            MoodId = 2,
+                            MoodName = "Sad"
+                        },
+                        new
+                        {
+                            MoodId = 3,
+                            MoodName = "Energetic"
+                        },
+                        new
+                        {
+                            MoodId = 4,
+                            MoodName = "Calm"
+                        },
+                        new
+                        {
+                            MoodId = 5,
+                            MoodName = "Romantic"
+                        },
+                        new
+                        {
+                            MoodId = 6,
+                            MoodName = "Angry"
+                        },
+                        new
+                        {
+                            MoodId = 7,
+                            MoodName = "Melancholic"
+                        },
+                        new
+                        {
+                            MoodId = 8,
+                            MoodName = "Upbeat"
+                        });
                 });
 
             modelBuilder.Entity("CIS_414_Playlist_Project.Models.Song", b =>
@@ -86,6 +128,10 @@ namespace CIS_414_Playlist_Project.Data.Migrations
 
                     b.Property<int>("ArtistId")
                         .HasColumnType("int");
+
+                    b.Property<string>("ArtistName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("DateReleased")
                         .IsRequired()
@@ -100,6 +146,21 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                     b.HasIndex("ArtistId");
 
                     b.ToTable("Songs");
+                });
+
+            modelBuilder.Entity("GenreSong", b =>
+                {
+                    b.Property<int>("GenresGenreId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SongsSongId")
+                        .HasColumnType("int");
+
+                    b.HasKey("GenresGenreId", "SongsSongId");
+
+                    b.HasIndex("SongsSongId");
+
+                    b.ToTable("SongGenres", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -247,10 +308,12 @@ namespace CIS_414_Playlist_Project.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -287,10 +350,12 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -298,6 +363,21 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("MoodSong", b =>
+                {
+                    b.Property<int>("MoodsMoodId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SongsSongId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MoodsMoodId", "SongsSongId");
+
+                    b.HasIndex("SongsSongId");
+
+                    b.ToTable("SongMoods", (string)null);
                 });
 
             modelBuilder.Entity("CIS_414_Playlist_Project.Models.Song", b =>
@@ -309,6 +389,21 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Artist");
+                });
+
+            modelBuilder.Entity("GenreSong", b =>
+                {
+                    b.HasOne("CIS_414_Playlist_Project.Models.Genre", null)
+                        .WithMany()
+                        .HasForeignKey("GenresGenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CIS_414_Playlist_Project.Models.Song", null)
+                        .WithMany()
+                        .HasForeignKey("SongsSongId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -358,6 +453,21 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MoodSong", b =>
+                {
+                    b.HasOne("CIS_414_Playlist_Project.Models.Mood", null)
+                        .WithMany()
+                        .HasForeignKey("MoodsMoodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CIS_414_Playlist_Project.Models.Song", null)
+                        .WithMany()
+                        .HasForeignKey("SongsSongId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

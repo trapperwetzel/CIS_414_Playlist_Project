@@ -3,6 +3,8 @@ using CIS_414_Playlist_Project.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+// 1/31/2025 Trapper W
+
 namespace CIS_414_Playlist_Project.Controllers
 {
     public class MusicController : Controller
@@ -14,42 +16,20 @@ namespace CIS_414_Playlist_Project.Controllers
             _context = context;
         }
 
-        public IActionResult Search()
-        {
-            var viewModel = new SearchViewModel
-            {
-                AvailableMoods = _context.Moods.Select(m => m.MoodName).ToList()
-            };
-            return View(viewModel);
-        }
+        
 
-        [HttpPost]
-        public async Task<IActionResult> Search(SearchViewModel searchModel)
+        [HttpGet]
+        public IActionResult FilterByGenre(string genre)
         {
-            var query = _context.Songs
-                .Include(s => s.Artist)
+            var songs = _context.Songs
+                .Include(s => s.Genres)
                 .Include(s => s.Moods)
-                .AsQueryable();
+                .Where(s => s.Genres.Any(g => g.GenreName.ToLower() == genre.ToLower()))
+                .ToList();
 
-            if (!string.IsNullOrEmpty(searchModel.SearchTerm))
-            {
-                query = query.Where(s =>
-                    s.SongTitle.Contains(searchModel.SearchTerm) ||
-                    s.ArtistName.Contains(searchModel.SearchTerm));
-            }
-
-            if (!string.IsNullOrEmpty(searchModel.Genre))
-            {
-                query = query.Where(s => s.Genre == searchModel.Genre);
-            }
-
-            if (!string.IsNullOrEmpty(searchModel.Mood))
-            {
-                query = query.Where(s => s.Moods.Any(m => m.MoodName == searchModel.Mood));
-            }
-
-            searchModel.Results = await query.ToListAsync();
-            return View(searchModel);
+            return View("Index", songs);
         }
+
+
     }
 }

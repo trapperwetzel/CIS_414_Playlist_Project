@@ -21,9 +21,9 @@ namespace CIS_414_Playlist_Project.Controllers
         {
             var viewModel = new SearchViewModel
             {
-                // Initialize with empty results but populated dropdowns
                 Results = new List<Song>(),
-                AvailableGenres = _context.Songs.Select(s => s.Genre).Distinct().ToList(),
+                // Convert Genre objects to strings
+                AvailableGenres = _context.Genres.Select(g => g.GenreName).Distinct().ToList(),
                 AvailableMoods = _context.Moods.Select(m => m.MoodName).ToList()
             };
             return View(viewModel);
@@ -33,6 +33,7 @@ namespace CIS_414_Playlist_Project.Controllers
         public IActionResult Search(SearchViewModel searchModel)
         {
             var query = _context.Songs
+                .Include(s => s.Genres)
                 .Include(s => s.Moods)
                 .AsQueryable();
 
@@ -45,7 +46,7 @@ namespace CIS_414_Playlist_Project.Controllers
 
             if (!string.IsNullOrEmpty(searchModel.Genre))
             {
-                query = query.Where(s => s.Genre == searchModel.Genre);
+                query = query.Where(s => s.Genres.Any(g => g.GenreName == searchModel.Genre));
             }
 
             if (!string.IsNullOrEmpty(searchModel.Mood))
@@ -54,16 +55,11 @@ namespace CIS_414_Playlist_Project.Controllers
             }
 
             searchModel.Results = query.ToList();
-            // Repopulate the dropdowns
-            searchModel.AvailableGenres = _context.Songs.Select(s => s.Genre).Distinct().ToList();
+            // Convert Genre objects to strings
+            searchModel.AvailableGenres = _context.Genres.Select(g => g.GenreName).Distinct().ToList();
             searchModel.AvailableMoods = _context.Moods.Select(m => m.MoodName).ToList();
 
             return View("Index", searchModel);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -2,10 +2,10 @@
 
 #nullable disable
 
-namespace CIS_414_Playlist_Project.Data.Migrations
+namespace CIS_414_Playlist_Project.Migrations
 {
     /// <inheritdoc />
-    public partial class RemoveArtistForeignKey : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

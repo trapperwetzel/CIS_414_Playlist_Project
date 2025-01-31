@@ -1,12 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿
 
+
+
+
+using System.ComponentModel.DataAnnotations;
 namespace CIS_414_Playlist_Project.Models
 {
     public class Mood
     {
         [Key]
-        public int MoodId { get;  set; }
+        public int MoodId { get; set; }
         public string MoodName { get; set; } = string.Empty;
 
         // Many-to-many with Song

@@ -62,13 +62,25 @@
                         <tr>
                             <td>@song.SongTitle</td>
                             <td>@song.ArtistName</td>
-                            <td>@song.Genre</td>
+                            <td>
+                                @if (song.Genres?.Any() == true)
+                                {
+                                    foreach (var genre in song.Genres)
+                                    {
+                                        <span class="badge bg-primary me-1">@genre.GenreName</span>
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="text-muted">No genres assigned</span>
+                                }
+                            </td>
                             <td>
                                 @if (song.Moods?.Any() == true)
                                 {
                                     foreach (var mood in song.Moods)
                                     {
-                                        <span class="badge badge-secondary">@mood.MoodName</span>
+                                        <span class="badge bg-secondary text-dark me-1">@mood.MoodName</span>
                                     }
                                 }
                                 else

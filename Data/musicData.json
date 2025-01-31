@@ -5,20 +5,20 @@
       "songs": [
         {
           "title": "Hey Jude",
-          "releaseDate": "1968-08-26",
-          "genre": "Rock",
+          "dateReleased": "1968-08-26",
+          "genres": [ "Rock" ],
           "moods": [ "Happy", "Upbeat", "Calm" ]
         },
         {
           "title": "Let It Be",
-          "releaseDate": "1970-03-06",
-          "genre": "Rock",
+          "dateReleased": "1970-03-06",
+          "genres": [ "Rock" ],
           "moods": [ "Calm", "Melancholic" ]
         },
         {
           "title": "Yesterday",
-          "releaseDate": "1965-09-13",
-          "genre": "Rock",
+          "dateReleased": "1965-09-13",
+          "genres": [ "Rock" ],
           "moods": [ "Melancholic", "Calm" ]
         }
       ]
@@ -28,20 +28,20 @@
       "songs": [
         {
           "title": "Bohemian Rhapsody",
-          "releaseDate": "1975-10-31",
-          "genre": "Rock",
+          "dateReleased": "1975-10-31",
+          "genres": [ "Rock" ],
           "moods": [ "Energetic", "Melancholic" ]
         },
         {
           "title": "We Will Rock You",
-          "releaseDate": "1977-10-07",
-          "genre": "Rock",
+          "dateReleased": "1977-10-07",
+          "genres": [ "Rock" ],
           "moods": [ "Energetic", "Upbeat" ]
         },
         {
           "title": "Don't Stop Me Now",
-          "releaseDate": "1979-01-05",
-          "genre": "Rock",
+          "dateReleased": "1979-01-05",
+          "genres": [ "Rock" ],
           "moods": [ "Happy", "Energetic" ]
         }
       ]
@@ -51,20 +51,20 @@
       "songs": [
         {
           "title": "Thriller",
-          "releaseDate": "1982-11-30",
-          "genre": "Pop",
+          "dateReleased": "1982-11-30",
+          "genres": [ "Pop" ],
           "moods": [ "Energetic", "Happy" ]
         },
         {
           "title": "Billie Jean",
-          "releaseDate": "1983-01-02",
-          "genre": "Pop",
+          "dateReleased": "1983-01-02",
+          "genres": [ "Pop" ],
           "moods": [ "Energetic", "Upbeat" ]
         },
         {
           "title": "Beat It",
-          "releaseDate": "1983-02-14",
-          "genre": "Pop",
+          "dateReleased": "1983-02-14",
+          "genres": [ "Pop" ],
           "moods": [ "Energetic", "Angry" ]
         }
       ]
@@ -74,20 +74,20 @@
       "songs": [
         {
           "title": "Shake It Off",
-          "releaseDate": "2014-08-18",
-          "genre": "Pop",
+          "dateReleased": "2014-08-18",
+          "genres": [ "Pop" ],
           "moods": [ "Happy", "Energetic" ]
         },
         {
           "title": "Anti-Hero",
-          "releaseDate": "2022-10-21",
-          "genre": "Pop",
+          "dateReleased": "2022-10-21",
+          "genres": [ "Pop" ],
           "moods": [ "Melancholic", "Upbeat" ]
         },
         {
           "title": "Love Story",
-          "releaseDate": "2008-09-12",
-          "genre": "Country Pop",
+          "dateReleased": "2008-09-12",
+          "genres": [ "Country Pop" ],
           "moods": [ "Romantic", "Happy" ]
         }
       ]
@@ -97,14 +97,14 @@
       "songs": [
         {
           "title": "Shape of You",
-          "releaseDate": "2017-01-06",
-          "genre": "Pop",
+          "dateReleased": "2017-01-06",
+          "genres": [ "Pop" ],
           "moods": [ "Happy", "Romantic" ]
         },
         {
           "title": "Perfect",
-          "releaseDate": "2017-09-26",
-          "genre": "Pop",
+          "dateReleased": "2017-09-26",
+          "genres": [ "Pop" ],
           "moods": [ "Romantic", "Calm" ]
         }
       ]
@@ -114,14 +114,14 @@
       "songs": [
         {
           "title": "Single Ladies",
-          "releaseDate": "2008-10-13",
-          "genre": "R&B",
+          "dateReleased": "2008-10-13",
+          "genres": [ "R&B" ],
           "moods": [ "Happy", "Energetic" ]
         },
         {
           "title": "Halo",
-          "releaseDate": "2009-01-20",
-          "genre": "R&B",
+          "dateReleased": "2009-01-20",
+          "genres": [ "R&B" ],
           "moods": [ "Romantic", "Calm" ]
         }
       ]
@@ -131,14 +131,14 @@
       "songs": [
         {
           "title": "Lose Yourself",
-          "releaseDate": "2002-10-28",
-          "genre": "Hip Hop",
+          "dateReleased": "2002-10-28",
+          "genres": [ "Hip Hop" ],
           "moods": [ "Energetic", "Angry" ]
         },
         {
           "title": "Not Afraid",
-          "releaseDate": "2010-04-29",
-          "genre": "Hip Hop",
+          "dateReleased": "2010-04-29",
+          "genres": [ "Hip Hop" ],
           "moods": [ "Energetic", "Upbeat" ]
         }
       ]
@@ -148,14 +148,14 @@
       "songs": [
         {
           "title": "Fix You",
-          "releaseDate": "2005-09-05",
-          "genre": "Alternative Rock",
+          "dateReleased": "2005-09-05",
+          "genres": [ "Alternative Rock" ],
           "moods": [ "Melancholic", "Calm" ]
         },
         {
           "title": "Viva La Vida",
-          "releaseDate": "2008-05-25",
-          "genre": "Alternative Rock",
+          "dateReleased": "2008-05-25",
+          "genres": [ "Alternative Rock" ],
           "moods": [ "Upbeat", "Happy" ]
         }
       ]
@@ -165,14 +165,14 @@
       "songs": [
         {
           "title": "Bad Romance",
-          "releaseDate": "2009-10-26",
-          "genre": "Pop",
+          "dateReleased": "2009-10-26",
+          "genres": [ "Pop" ],
           "moods": [ "Energetic", "Dark" ]
         },
         {
           "title": "Shallow",
-          "releaseDate": "2018-09-27",
-          "genre": "Pop",
+          "dateReleased": "2018-09-27",
+          "genres": [ "Pop" ],
           "moods": [ "Romantic", "Emotional" ]
         }
       ]
@@ -182,14 +182,14 @@
       "songs": [
         {
           "title": "Hotline Bling",
-          "releaseDate": "2015-07-31",
-          "genre": "Hip Hop",
+          "dateReleased": "2015-07-31",
+          "genres": [ "Hip Hop" ],
           "moods": [ "Melancholic", "Calm" ]
         },
         {
           "title": "God's Plan",
-          "releaseDate": "2018-01-19",
-          "genre": "Hip Hop",
+          "dateReleased": "2018-01-19",
+          "genres": [ "Hip Hop" ],
           "moods": [ "Upbeat", "Happy" ]
         }
       ]
@@ -199,14 +199,14 @@
       "songs": [
         {
           "title": "Rolling in the Deep",
-          "releaseDate": "2010-11-29",
-          "genre": "Pop",
+          "dateReleased": "2010-11-29",
+          "genres": [ "Pop" ],
           "moods": [ "Angry", "Energetic" ]
         },
         {
           "title": "Hello",
-          "releaseDate": "2015-10-23",
-          "genre": "Pop",
+          "dateReleased": "2015-10-23",
+          "genres": [ "Pop" ],
           "moods": [ "Melancholic", "Sad" ]
         }
       ]
@@ -216,14 +216,14 @@
       "songs": [
         {
           "title": "Blinding Lights",
-          "releaseDate": "2019-11-29",
-          "genre": "Synth-pop",
+          "dateReleased": "2019-11-29",
+          "genres": [ "Synth-pop" ],
           "moods": [ "Energetic", "Upbeat" ]
         },
         {
           "title": "Starboy",
-          "releaseDate": "2016-09-22",
-          "genre": "R&B",
+          "dateReleased": "2016-09-22",
+          "genres": [ "R&B" ],
           "moods": [ "Energetic", "Dark" ]
         }
       ]
@@ -233,14 +233,14 @@
       "songs": [
         {
           "title": "Uptown Funk",
-          "releaseDate": "2014-11-10",
-          "genre": "Funk",
+          "dateReleased": "2014-11-10",
+          "genres": [ "Funk" ],
           "moods": [ "Happy", "Energetic" ]
         },
         {
           "title": "Just the Way You Are",
-          "releaseDate": "2010-07-20",
-          "genre": "Pop",
+          "dateReleased": "2010-07-20",
+          "genres": [ "Pop" ],
           "moods": [ "Romantic", "Happy" ]
         }
       ]
@@ -250,14 +250,14 @@
       "songs": [
         {
           "title": "Enter Sandman",
-          "releaseDate": "1991-07-29",
-          "genre": "Metal",
+          "dateReleased": "1991-07-29",
+          "genres": [ "Metal" ],
           "moods": [ "Dark", "Energetic" ]
         },
         {
           "title": "Nothing Else Matters",
-          "releaseDate": "1992-04-20",
-          "genre": "Metal",
+          "dateReleased": "1992-04-20",
+          "genres": [ "Metal" ],
           "moods": [ "Melancholic", "Calm" ]
         }
       ]
@@ -267,14 +267,14 @@
       "songs": [
         {
           "title": "Another Brick in the Wall",
-          "releaseDate": "1979-11-30",
-          "genre": "Progressive Rock",
+          "dateReleased": "1979-11-30",
+          "genres": [ "Progressive Rock" ],
           "moods": [ "Angry", "Dark" ]
         },
         {
           "title": "Wish You Were Here",
-          "releaseDate": "1975-09-12",
-          "genre": "Progressive Rock",
+          "dateReleased": "1975-09-12",
+          "genres": [ "Progressive Rock" ],
           "moods": [ "Melancholic", "Calm" ]
         }
       ]
@@ -284,14 +284,14 @@
       "songs": [
         {
           "title": "One Love",
-          "releaseDate": "1977-11-25",
-          "genre": "Reggae",
+          "dateReleased": "1977-11-25",
+          "genres": [ "Reggae" ],
           "moods": [ "Happy", "Calm" ]
         },
         {
           "title": "Buffalo Soldier",
-          "releaseDate": "1983-05-01",
-          "genre": "Reggae",
+          "dateReleased": "1983-05-01",
+          "genres": [ "Reggae" ],
           "moods": [ "Upbeat", "Happy" ]
         }
       ]
@@ -301,14 +301,14 @@
       "songs": [
         {
           "title": "Smells Like Teen Spirit",
-          "releaseDate": "1991-09-10",
-          "genre": "Grunge",
+          "dateReleased": "1991-09-10",
+          "genres": [ "Grunge" ],
           "moods": [ "Angry", "Energetic" ]
         },
         {
           "title": "Come as You Are",
-          "releaseDate": "1992-03-03",
-          "genre": "Grunge",
+          "dateReleased": "1992-03-03",
+          "genres": [ "Grunge" ],
           "moods": [ "Melancholic", "Dark" ]
         }
       ]
@@ -318,14 +318,14 @@
       "songs": [
         {
           "title": "Space Oddity",
-          "releaseDate": "1969-07-11",
-          "genre": "Art Rock",
+          "dateReleased": "1969-07-11",
+          "genres": [ "Art Rock" ],
           "moods": [ "Melancholic", "Mysterious" ]
         },
         {
           "title": "Heroes",
-          "releaseDate": "1977-09-23",
-          "genre": "Art Rock",
+          "dateReleased": "1977-09-23",
+          "genres": [ "Art Rock" ],
           "moods": [ "Upbeat", "Emotional" ]
         }
       ]
@@ -335,14 +335,14 @@
       "songs": [
         {
           "title": "With or Without You",
-          "releaseDate": "1987-03-16",
-          "genre": "Rock",
+          "dateReleased": "1987-03-16",
+          "genres": [ "Rock" ],
           "moods": [ "Romantic", "Melancholic" ]
         },
         {
           "title": "Beautiful Day",
-          "releaseDate": "2000-10-09",
-          "genre": "Rock",
+          "dateReleased": "2000-10-09",
+          "genres": [ "Rock" ],
           "moods": [ "Happy", "Upbeat" ]
         }
       ]
@@ -352,14 +352,14 @@
       "songs": [
         {
           "title": "Like a Prayer",
-          "releaseDate": "1989-03-03",
-          "genre": "Pop",
+          "dateReleased": "1989-03-03",
+          "genres": [ "Pop" ],
           "moods": [ "Energetic", "Spiritual" ]
         },
         {
           "title": "Vogue",
-          "releaseDate": "1990-03-27",
-          "genre": "Pop",
+          "dateReleased": "1990-03-27",
+          "genres": [ "Pop" ],
           "moods": [ "Energetic", "Happy" ]
         }
       ]

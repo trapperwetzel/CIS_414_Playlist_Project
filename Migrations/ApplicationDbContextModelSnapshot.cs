@@ -4,19 +4,16 @@ using CIS_414_Playlist_Project.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace CIS_414_Playlist_Project.Data.Migrations
+namespace CIS_414_Playlist_Project.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250126032810_RemoveArtistForeignKey")]
-    partial class RemoveArtistForeignKey
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,7 +36,7 @@ namespace CIS_414_Playlist_Project.Data.Migrations
 
                     b.HasKey("ArtistId");
 
-                    b.ToTable("Artist");
+                    b.ToTable("Artists");
                 });
 
             modelBuilder.Entity("CIS_414_Playlist_Project.Models.Genre", b =>
@@ -50,18 +47,13 @@ namespace CIS_414_Playlist_Project.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GenreId"));
 
-                    b.Property<int?>("ArtistId")
-                        .HasColumnType("int");
-
                     b.Property<string>("GenreName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("GenreId");
 
-                    b.HasIndex("ArtistId");
-
-                    b.ToTable("Genre");
+                    b.ToTable("Genres");
                 });
 
             modelBuilder.Entity("CIS_414_Playlist_Project.Models.Mood", b =>
@@ -78,7 +70,49 @@ namespace CIS_414_Playlist_Project.Data.Migrations
 
                     b.HasKey("MoodId");
 
-                    b.ToTable("Mood");
+                    b.ToTable("Moods");
+
+                    b.HasData(
+                        new
+                        {
+                            MoodId = 1,
+                            MoodName = "Happy"
+                        },
+                        new
+                        {
+                            MoodId = 2,
+                            MoodName = "Sad"
+                        },
+                        new
+                        {
+                            MoodId = 3,
+                            MoodName = "Energetic"
+                        },
+                        new
+                        {
+                            MoodId = 4,
+                            MoodName = "Calm"
+                        },
+                        new
+                        {
+                            MoodId = 5,
+                            MoodName = "Romantic"
+                        },
+                        new
+                        {
+                            MoodId = 6,
+                            MoodName = "Angry"
+                        },
+                        new
+                        {
+                            MoodId = 7,
+                            MoodName = "Melancholic"
+                        },
+                        new
+                        {
+                            MoodId = 8,
+                            MoodName = "Upbeat"
+                        });
                 });
 
             modelBuilder.Entity("CIS_414_Playlist_Project.Models.Song", b =>
@@ -89,7 +123,7 @@ namespace CIS_414_Playlist_Project.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SongId"));
 
-                    b.Property<int?>("ArtistId")
+                    b.Property<int>("ArtistId")
                         .HasColumnType("int");
 
                     b.Property<string>("ArtistName")
@@ -108,7 +142,22 @@ namespace CIS_414_Playlist_Project.Data.Migrations
 
                     b.HasIndex("ArtistId");
 
-                    b.ToTable("Song");
+                    b.ToTable("Songs");
+                });
+
+            modelBuilder.Entity("GenreSong", b =>
+                {
+                    b.Property<int>("GenresGenreId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SongsSongId")
+                        .HasColumnType("int");
+
+                    b.HasKey("GenresGenreId", "SongsSongId");
+
+                    b.HasIndex("SongsSongId");
+
+                    b.ToTable("SongGenres", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -256,10 +305,12 @@ namespace CIS_414_Playlist_Project.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -296,10 +347,12 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -309,18 +362,45 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("CIS_414_Playlist_Project.Models.Genre", b =>
+            modelBuilder.Entity("MoodSong", b =>
                 {
-                    b.HasOne("CIS_414_Playlist_Project.Models.Artist", null)
-                        .WithMany("Genres")
-                        .HasForeignKey("ArtistId");
+                    b.Property<int>("MoodsMoodId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SongsSongId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MoodsMoodId", "SongsSongId");
+
+                    b.HasIndex("SongsSongId");
+
+                    b.ToTable("SongMoods", (string)null);
                 });
 
             modelBuilder.Entity("CIS_414_Playlist_Project.Models.Song", b =>
                 {
-                    b.HasOne("CIS_414_Playlist_Project.Models.Artist", null)
+                    b.HasOne("CIS_414_Playlist_Project.Models.Artist", "Artist")
                         .WithMany("Songs")
-                        .HasForeignKey("ArtistId");
+                        .HasForeignKey("ArtistId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Artist");
+                });
+
+            modelBuilder.Entity("GenreSong", b =>
+                {
+                    b.HasOne("CIS_414_Playlist_Project.Models.Genre", null)
+                        .WithMany()
+                        .HasForeignKey("GenresGenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CIS_414_Playlist_Project.Models.Song", null)
+                        .WithMany()
+                        .HasForeignKey("SongsSongId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -374,10 +454,23 @@ namespace CIS_414_Playlist_Project.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("MoodSong", b =>
+                {
+                    b.HasOne("CIS_414_Playlist_Project.Models.Mood", null)
+                        .WithMany()
+                        .HasForeignKey("MoodsMoodId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CIS_414_Playlist_Project.Models.Song", null)
+                        .WithMany()
+                        .HasForeignKey("SongsSongId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("CIS_414_Playlist_Project.Models.Artist", b =>
                 {
-                    b.Navigation("Genres");
-
                     b.Navigation("Songs");
                 });
 #pragma warning restore 612, 618
