@@ -20,11 +20,13 @@ namespace CIS_414_Playlist_Project.Models
         [Required]
         public string DateReleased { get; set; }
 
+
+
         // Navigation properties
         public virtual Artist Artist { get; set; }
         public virtual ICollection<Genre> Genres { get; set; }
         public virtual ICollection<Mood> Moods { get; set; }
-
+        
         public Song()
         {
             SongTitle = "N/A";

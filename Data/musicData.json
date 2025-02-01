@@ -1,247 +1,117 @@
 ﻿{
   "artists": [
     {
-      "name": "The Beatles",
+      "name": "2Pac",
       "songs": [
         {
-          "title": "Hey Jude",
-          "dateReleased": "1968-08-26",
-          "genres": [ "Rock" ],
-          "moods": [ "Happy", "Upbeat", "Calm" ]
+          "title": "Dear Mama",
+          "dateReleased": "1995-02-21",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Sad", "Calm" ]
         },
         {
-          "title": "Let It Be",
-          "dateReleased": "1970-03-06",
-          "genres": [ "Rock" ],
-          "moods": [ "Calm", "Melancholic" ]
-        },
-        {
-          "title": "Yesterday",
-          "dateReleased": "1965-09-13",
-          "genres": [ "Rock" ],
-          "moods": [ "Melancholic", "Calm" ]
-        }
-      ]
-    },
-    {
-      "name": "Queen",
-      "songs": [
-        {
-          "title": "Bohemian Rhapsody",
-          "dateReleased": "1975-10-31",
-          "genres": [ "Rock" ],
-          "moods": [ "Energetic", "Melancholic" ]
-        },
-        {
-          "title": "We Will Rock You",
-          "dateReleased": "1977-10-07",
-          "genres": [ "Rock" ],
-          "moods": [ "Energetic", "Upbeat" ]
-        },
-        {
-          "title": "Don't Stop Me Now",
-          "dateReleased": "1979-01-05",
-          "genres": [ "Rock" ],
+          "title": "California Love",
+          "dateReleased": "1995-12-03",
+          "genres": [ "Hip Hop" ],
           "moods": [ "Happy", "Energetic" ]
+        },
+        {
+          "title": "Changes",
+          "dateReleased": "1998-10-13",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Sad", "Calm" ]
         }
       ]
     },
     {
-      "name": "Michael Jackson",
+      "name": "Kendrick Lamar",
       "songs": [
         {
-          "title": "Thriller",
-          "dateReleased": "1982-11-30",
-          "genres": [ "Pop" ],
+          "title": "Alright",
+          "dateReleased": "2015-03-15",
+          "genres": [ "Hip Hop" ],
           "moods": [ "Energetic", "Happy" ]
         },
         {
-          "title": "Billie Jean",
-          "dateReleased": "1983-01-02",
-          "genres": [ "Pop" ],
-          "moods": [ "Energetic", "Upbeat" ]
-        },
-        {
-          "title": "Beat It",
-          "dateReleased": "1983-02-14",
-          "genres": [ "Pop" ],
-          "moods": [ "Energetic", "Angry" ]
-        }
-      ]
-    },
-    {
-      "name": "Taylor Swift",
-      "songs": [
-        {
-          "title": "Shake It Off",
-          "dateReleased": "2014-08-18",
-          "genres": [ "Pop" ],
-          "moods": [ "Happy", "Energetic" ]
-        },
-        {
-          "title": "Anti-Hero",
-          "dateReleased": "2022-10-21",
-          "genres": [ "Pop" ],
-          "moods": [ "Melancholic", "Upbeat" ]
-        },
-        {
-          "title": "Love Story",
-          "dateReleased": "2008-09-12",
-          "genres": [ "Country Pop" ],
-          "moods": [ "Romantic", "Happy" ]
-        }
-      ]
-    },
-    {
-      "name": "Ed Sheeran",
-      "songs": [
-        {
-          "title": "Shape of You",
-          "dateReleased": "2017-01-06",
-          "genres": [ "Pop" ],
-          "moods": [ "Happy", "Romantic" ]
-        },
-        {
-          "title": "Perfect",
-          "dateReleased": "2017-09-26",
-          "genres": [ "Pop" ],
-          "moods": [ "Romantic", "Calm" ]
-        }
-      ]
-    },
-    {
-      "name": "Beyoncé",
-      "songs": [
-        {
-          "title": "Single Ladies",
-          "dateReleased": "2008-10-13",
-          "genres": [ "R&B" ],
-          "moods": [ "Happy", "Energetic" ]
-        },
-        {
-          "title": "Halo",
-          "dateReleased": "2009-01-20",
-          "genres": [ "R&B" ],
-          "moods": [ "Romantic", "Calm" ]
-        }
-      ]
-    },
-    {
-      "name": "Eminem",
-      "songs": [
-        {
-          "title": "Lose Yourself",
-          "dateReleased": "2002-10-28",
+          "title": "HUMBLE.",
+          "dateReleased": "2017-03-30",
           "genres": [ "Hip Hop" ],
-          "moods": [ "Energetic", "Angry" ]
-        },
-        {
-          "title": "Not Afraid",
-          "dateReleased": "2010-04-29",
-          "genres": [ "Hip Hop" ],
-          "moods": [ "Energetic", "Upbeat" ]
-        }
-      ]
-    },
-    {
-      "name": "Coldplay",
-      "songs": [
-        {
-          "title": "Fix You",
-          "dateReleased": "2005-09-05",
-          "genres": [ "Alternative Rock" ],
-          "moods": [ "Melancholic", "Calm" ]
-        },
-        {
-          "title": "Viva La Vida",
-          "dateReleased": "2008-05-25",
-          "genres": [ "Alternative Rock" ],
-          "moods": [ "Upbeat", "Happy" ]
-        }
-      ]
-    },
-    {
-      "name": "Lady Gaga",
-      "songs": [
-        {
-          "title": "Bad Romance",
-          "dateReleased": "2009-10-26",
-          "genres": [ "Pop" ],
-          "moods": [ "Energetic", "Dark" ]
-        },
-        {
-          "title": "Shallow",
-          "dateReleased": "2018-09-27",
-          "genres": [ "Pop" ],
-          "moods": [ "Romantic", "Emotional" ]
-        }
-      ]
-    },
-    {
-      "name": "Drake",
-      "songs": [
-        {
-          "title": "Hotline Bling",
-          "dateReleased": "2015-07-31",
-          "genres": [ "Hip Hop" ],
-          "moods": [ "Melancholic", "Calm" ]
-        },
-        {
-          "title": "God's Plan",
-          "dateReleased": "2018-01-19",
-          "genres": [ "Hip Hop" ],
-          "moods": [ "Upbeat", "Happy" ]
-        }
-      ]
-    },
-    {
-      "name": "Adele",
-      "songs": [
-        {
-          "title": "Rolling in the Deep",
-          "dateReleased": "2010-11-29",
-          "genres": [ "Pop" ],
           "moods": [ "Angry", "Energetic" ]
         },
         {
-          "title": "Hello",
-          "dateReleased": "2015-10-23",
-          "genres": [ "Pop" ],
-          "moods": [ "Melancholic", "Sad" ]
+          "title": "Money Trees",
+          "dateReleased": "2012-10-22",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Calm", "Happy" ]
         }
       ]
     },
     {
-      "name": "The Weeknd",
+      "name": "Wu-Tang Clan",
       "songs": [
         {
-          "title": "Blinding Lights",
-          "dateReleased": "2019-11-29",
-          "genres": [ "Synth-pop" ],
-          "moods": [ "Energetic", "Upbeat" ]
+          "title": "C.R.E.A.M.",
+          "dateReleased": "1993-01-31",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Energetic", "Angry" ]
         },
         {
-          "title": "Starboy",
-          "dateReleased": "2016-09-22",
-          "genres": [ "R&B" ],
-          "moods": [ "Energetic", "Dark" ]
+          "title": "Protect Ya Neck",
+          "dateReleased": "1992-05-03",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Energetic", "Angry" ]
+        },
+        {
+          "title": "Method Man",
+          "dateReleased": "1993-12-13",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Energetic", "Happy" ]
         }
       ]
     },
     {
-      "name": "Bruno Mars",
+      "name": "OutKast",
       "songs": [
         {
-          "title": "Uptown Funk",
-          "dateReleased": "2014-11-10",
-          "genres": [ "Funk" ],
+          "title": "Hey Ya!",
+          "dateReleased": "2003-09-09",
+          "genres": [ "Hip Hop" ],
           "moods": [ "Happy", "Energetic" ]
         },
         {
-          "title": "Just the Way You Are",
-          "dateReleased": "2010-07-20",
-          "genres": [ "Pop" ],
-          "moods": [ "Romantic", "Happy" ]
+          "title": "Ms. Jackson",
+          "dateReleased": "2000-10-24",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Sad", "Calm" ]
+        },
+        {
+          "title": "B.O.B.",
+          "dateReleased": "2000-09-19",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Energetic", "Happy" ]
+        }
+      ]
+    },
+    {
+      "name": "Nas",
+      "songs": [
+        {
+          "title": "N.Y. State of Mind",
+          "dateReleased": "1994-04-19",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Energetic", "Angry" ]
+        },
+        {
+          "title": "The World Is Yours",
+          "dateReleased": "1994-04-19",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Calm", "Happy" ]
+        },
+        {
+          "title": "One Mic",
+          "dateReleased": "2002-03-05",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Angry", "Energetic" ]
         }
       ]
     },
@@ -249,16 +119,91 @@
       "name": "Metallica",
       "songs": [
         {
+          "title": "Master of Puppets",
+          "dateReleased": "1986-03-03",
+          "genres": [ "Metal" ],
+          "moods": [ "Angry", "Energetic" ]
+        },
+        {
+          "title": "One",
+          "dateReleased": "1989-01-10",
+          "genres": [ "Metal" ],
+          "moods": [ "Sad", "Angry" ]
+        },
+        {
           "title": "Enter Sandman",
           "dateReleased": "1991-07-29",
           "genres": [ "Metal" ],
-          "moods": [ "Dark", "Energetic" ]
+          "moods": [ "Energetic", "Angry" ]
+        }
+      ]
+    },
+    {
+      "name": "Slayer",
+      "songs": [
+        {
+          "title": "Raining Blood",
+          "dateReleased": "1986-10-07",
+          "genres": [ "Metal" ],
+          "moods": [ "Angry", "Energetic" ]
         },
         {
-          "title": "Nothing Else Matters",
-          "dateReleased": "1992-04-20",
+          "title": "Angel of Death",
+          "dateReleased": "1986-10-07",
           "genres": [ "Metal" ],
-          "moods": [ "Melancholic", "Calm" ]
+          "moods": [ "Angry", "Energetic" ]
+        },
+        {
+          "title": "War Ensemble",
+          "dateReleased": "1990-10-09",
+          "genres": [ "Metal" ],
+          "moods": [ "Angry", "Energetic" ]
+        }
+      ]
+    },
+    {
+      "name": "Iron Maiden",
+      "songs": [
+        {
+          "title": "The Number of the Beast",
+          "dateReleased": "1982-03-22",
+          "genres": [ "Metal" ],
+          "moods": [ "Energetic", "Angry" ]
+        },
+        {
+          "title": "Run to the Hills",
+          "dateReleased": "1982-02-12",
+          "genres": [ "Metal" ],
+          "moods": [ "Energetic", "Happy" ]
+        },
+        {
+          "title": "Fear of the Dark",
+          "dateReleased": "1992-05-11",
+          "genres": [ "Metal" ],
+          "moods": [ "Energetic", "Angry" ]
+        }
+      ]
+    },
+    {
+      "name": "Led Zeppelin",
+      "songs": [
+        {
+          "title": "Stairway to Heaven",
+          "dateReleased": "1971-11-08",
+          "genres": [ "Rock" ],
+          "moods": [ "Calm", "Romantic" ]
+        },
+        {
+          "title": "Kashmir",
+          "dateReleased": "1975-02-24",
+          "genres": [ "Rock" ],
+          "moods": [ "Energetic", "Calm" ]
+        },
+        {
+          "title": "Whole Lotta Love",
+          "dateReleased": "1969-11-07",
+          "genres": [ "Rock" ],
+          "moods": [ "Energetic", "Romantic" ]
         }
       ]
     },
@@ -266,33 +211,45 @@
       "name": "Pink Floyd",
       "songs": [
         {
-          "title": "Another Brick in the Wall",
-          "dateReleased": "1979-11-30",
-          "genres": [ "Progressive Rock" ],
-          "moods": [ "Angry", "Dark" ]
-        },
-        {
           "title": "Wish You Were Here",
           "dateReleased": "1975-09-12",
-          "genres": [ "Progressive Rock" ],
-          "moods": [ "Melancholic", "Calm" ]
+          "genres": [ "Rock" ],
+          "moods": [ "Sad", "Calm" ]
+        },
+        {
+          "title": "Comfortably Numb",
+          "dateReleased": "1979-11-30",
+          "genres": [ "Rock" ],
+          "moods": [ "Calm", "Sad" ]
+        },
+        {
+          "title": "Money",
+          "dateReleased": "1973-05-23",
+          "genres": [ "Rock" ],
+          "moods": [ "Energetic", "Angry" ]
         }
       ]
     },
     {
-      "name": "Bob Marley",
+      "name": "Radiohead",
       "songs": [
         {
-          "title": "One Love",
-          "dateReleased": "1977-11-25",
-          "genres": [ "Reggae" ],
-          "moods": [ "Happy", "Calm" ]
+          "title": "Paranoid Android",
+          "dateReleased": "1997-05-26",
+          "genres": [ "Rock", "Alternative Rock" ],
+          "moods": [ "Angry", "Sad" ]
         },
         {
-          "title": "Buffalo Soldier",
-          "dateReleased": "1983-05-01",
-          "genres": [ "Reggae" ],
-          "moods": [ "Upbeat", "Happy" ]
+          "title": "Creep",
+          "dateReleased": "1992-09-21",
+          "genres": [ "Rock", "Alternative Rock" ],
+          "moods": [ "Sad", "Angry" ]
+        },
+        {
+          "title": "Karma Police",
+          "dateReleased": "1997-08-25",
+          "genres": [ "Rock", "Alternative Rock" ],
+          "moods": [ "Sad", "Calm" ]
         }
       ]
     },
@@ -309,58 +266,237 @@
           "title": "Come as You Are",
           "dateReleased": "1992-03-03",
           "genres": [ "Grunge" ],
-          "moods": [ "Melancholic", "Dark" ]
+          "moods": [ "Calm", "Sad" ]
+        },
+        {
+          "title": "Lithium",
+          "dateReleased": "1992-07-21",
+          "genres": [ "Grunge" ],
+          "moods": [ "Sad", "Angry" ]
         }
       ]
     },
     {
-      "name": "David Bowie",
+      "name": "Pearl Jam",
       "songs": [
         {
-          "title": "Space Oddity",
-          "dateReleased": "1969-07-11",
-          "genres": [ "Art Rock" ],
-          "moods": [ "Melancholic", "Mysterious" ]
+          "title": "Black",
+          "dateReleased": "1991-08-27",
+          "genres": [ "Grunge" ],
+          "moods": [ "Sad", "Romantic" ]
         },
         {
-          "title": "Heroes",
-          "dateReleased": "1977-09-23",
-          "genres": [ "Art Rock" ],
-          "moods": [ "Upbeat", "Emotional" ]
+          "title": "Alive",
+          "dateReleased": "1991-07-07",
+          "genres": [ "Grunge" ],
+          "moods": [ "Energetic", "Angry" ]
+        },
+        {
+          "title": "Jeremy",
+          "dateReleased": "1991-08-27",
+          "genres": [ "Grunge" ],
+          "moods": [ "Sad", "Angry" ]
         }
       ]
     },
     {
-      "name": "U2",
+      "name": "Alice In Chains",
       "songs": [
         {
-          "title": "With or Without You",
-          "dateReleased": "1987-03-16",
-          "genres": [ "Rock" ],
-          "moods": [ "Romantic", "Melancholic" ]
+          "title": "Man in the Box",
+          "dateReleased": "1991-01-29",
+          "genres": [ "Grunge" ],
+          "moods": [ "Angry", "Energetic" ]
         },
         {
-          "title": "Beautiful Day",
-          "dateReleased": "2000-10-09",
-          "genres": [ "Rock" ],
-          "moods": [ "Happy", "Upbeat" ]
+          "title": "Would?",
+          "dateReleased": "1992-06-30",
+          "genres": [ "Grunge" ],
+          "moods": [ "Sad", "Angry" ]
+        },
+        {
+          "title": "Rooster",
+          "dateReleased": "1993-02-22",
+          "genres": [ "Grunge" ],
+          "moods": [ "Sad", "Angry" ]
         }
       ]
     },
     {
-      "name": "Madonna",
+      "name": "Stevie Wonder",
       "songs": [
         {
-          "title": "Like a Prayer",
-          "dateReleased": "1989-03-03",
-          "genres": [ "Pop" ],
-          "moods": [ "Energetic", "Spiritual" ]
+          "title": "Superstition",
+          "dateReleased": "1972-10-24",
+          "genres": [ "R&B/Soul" ],
+          "moods": [ "Happy", "Energetic" ]
         },
         {
-          "title": "Vogue",
-          "dateReleased": "1990-03-27",
-          "genres": [ "Pop" ],
+          "title": "Isn't She Lovely",
+          "dateReleased": "1976-09-28",
+          "genres": [ "R&B/Soul" ],
+          "moods": [ "Happy", "Romantic" ]
+        },
+        {
+          "title": "I Just Called to Say I Love You",
+          "dateReleased": "1984-08-27",
+          "genres": [ "R&B/Soul" ],
+          "moods": [ "Romantic", "Happy" ]
+        }
+      ]
+    },
+    {
+      "name": "Marvin Gaye",
+      "songs": [
+        {
+          "title": "What's Going On",
+          "dateReleased": "1971-01-20",
+          "genres": [ "R&B/Soul" ],
+          "moods": [ "Sad", "Calm" ]
+        },
+        {
+          "title": "Let's Get It On",
+          "dateReleased": "1973-06-15",
+          "genres": [ "R&B/Soul" ],
+          "moods": [ "Romantic", "Happy" ]
+        },
+        {
+          "title": "Sexual Healing",
+          "dateReleased": "1982-09-30",
+          "genres": [ "R&B/Soul" ],
+          "moods": [ "Romantic", "Happy" ]
+        }
+      ]
+    },
+    {
+      "name": "Miles Davis",
+      "songs": [
+        {
+          "title": "So What",
+          "dateReleased": "1959-08-17",
+          "genres": [ "Jazz" ],
+          "moods": [ "Calm", "Happy" ]
+        },
+        {
+          "title": "Blue in Green",
+          "dateReleased": "1959-08-17",
+          "genres": [ "Jazz" ],
+          "moods": [ "Sad", "Calm" ]
+        },
+        {
+          "title": "All Blues",
+          "dateReleased": "1959-08-17",
+          "genres": [ "Jazz" ],
+          "moods": [ "Calm", "Romantic" ]
+        }
+      ]
+    },
+    {
+      "name": "John Coltrane",
+      "songs": [
+        {
+          "title": "Giant Steps",
+          "dateReleased": "1960-01-01",
+          "genres": [ "Jazz" ],
           "moods": [ "Energetic", "Happy" ]
+        },
+        {
+          "title": "My Favorite Things",
+          "dateReleased": "1961-03-01",
+          "genres": [ "Jazz" ],
+          "moods": [ "Happy", "Calm" ]
+        },
+        {
+          "title": "A Love Supreme, Pt. 1 - Acknowledgement",
+          "dateReleased": "1965-01-01",
+          "genres": [ "Jazz" ],
+          "moods": [ "Calm", "Romantic" ]
+        }
+      ]
+    },
+    {
+      "name": "Johnny Cash",
+      "songs": [
+        {
+          "title": "Ring of Fire",
+          "dateReleased": "1963-03-25",
+          "genres": [ "Country" ],
+          "moods": [ "Happy", "Energetic" ]
+        },
+        {
+          "title": "Hurt",
+          "dateReleased": "2002-03-28",
+          "genres": [ "Country" ],
+          "moods": [ "Sad", "Angry" ]
+        },
+        {
+          "title": "Folsom Prison Blues",
+          "dateReleased": "1955-07-30",
+          "genres": [ "Country" ],
+          "moods": [ "Sad", "Energetic" ]
+        }
+      ]
+    },
+    {
+      "name": "MF DOOM",
+      "songs": [
+        {
+          "title": "Doomsday",
+          "dateReleased": "1999-10-19",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Energetic", "Happy" ]
+        },
+        {
+          "title": "Rapp Snitch Knishes",
+          "dateReleased": "2004-11-16",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Energetic", "Happy" ]
+        },
+        {
+          "title": "All Caps",
+          "dateReleased": "2004-03-23",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Energetic", "Angry" ]
+        }
+      ]
+    },
+    {
+      "name": "Mobb Deep",
+      "songs": [
+        {
+          "title": "Shook Ones, Pt. II",
+          "dateReleased": "1995-04-25",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Angry", "Energetic" ]
+        },
+        {
+          "title": "Survival of the Fittest",
+          "dateReleased": "1995-05-29",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Energetic", "Angry" ]
+        },
+        {
+          "title": "Quiet Storm",
+          "dateReleased": "1999-03-16",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Calm", "Angry" ]
+        }
+      ]
+    },
+    {
+      "name": "A Tribe Called Quest",
+      "songs": [
+        {
+          "title": "Check the Rhime",
+          "dateReleased": "1991-09-03",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Happy", "Energetic" ]
+        },
+        {
+          "title": "Can I Kick It?",
+          "dateReleased": "1990-11-09",
+          "genres": [ "Hip Hop" ],
+          "moods": [ "Happy", "Calm" ]
         }
       ]
     }

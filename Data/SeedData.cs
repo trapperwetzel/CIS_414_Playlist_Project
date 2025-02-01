@@ -29,54 +29,8 @@
             }
         }
 
-        // Helper method to create sample data
-        public static Dictionary<string, List<ArtistData>> GetSampleData()
-        {
-            return new Dictionary<string, List<ArtistData>>
-            {
-                {
-                    "artists", new List<ArtistData>
-                    {
-                        new ArtistData
-                        {
-                            Name = "The Beatles",
-                            Songs = new List<SongData>
-                            {
-                                new SongData
-                                {
-                                    Title = "Hey Jude",
-                                    DateReleased = "1968-08-26",
-                                    Genres = new List<string> { "Rock", "Pop" },
-                                    Moods = new List<string> { "Uplifting", "Mellow" }
-                                },
-                                new SongData
-                                {
-                                    Title = "Let It Be",
-                                    DateReleased = "1970-03-06",
-                                    Genres = new List<string> { "Rock", "Gospel" },
-                                    Moods = new List<string> { "Peaceful", "Inspirational" }
-                                }
-                            }
-                        },
-                        new ArtistData
-                        {
-                            Name = "Queen",
-                            Songs = new List<SongData>
-                            {
-                                new SongData
-                                {
-                                    Title = "Bohemian Rhapsody",
-                                    DateReleased = "1975-10-31",
-                                    Genres = new List<string> { "Rock", "Opera" },
-                                    Moods = new List<string> { "Epic", "Dramatic" }
-                                }
-                            }
-                        }
-                        // Add more artists as needed
-                    }
-                }
-            };
-        }
+        
+        
 
         // Validation method to ensure data integrity
         public static bool ValidateData(Dictionary<string, List<ArtistData>> data)

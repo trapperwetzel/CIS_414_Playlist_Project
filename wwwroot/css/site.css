@@ -1,22 +1,129 @@
-html {
-  font-size: 14px;
+
+
+
+/* Dark Theme with higher specificity */
+:root {
+    --dark-bg: #121212;
+    --dark-surface: #1e1e1e;
+    --accent-color: #7b68ee;
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
 }
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Use !important for body background to ensure it overrides other styles */
 body {
-  margin-bottom: 60px;
+    background-color: var(--dark-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+    /* Add higher specificity for container */
+    body .container {
+        background-color: var(--dark-surface);
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 2rem;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+
+/* Override navbar styles */
+.navbar {
+    background-color: var(--dark-surface) !important;
+}
+
+.nav-link.text-dark {
+    color: var(--text-primary) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+.auth-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    color: var(--text-primary) !important;
+    transition: color 0.3s ease;
+}
+
+    .nav-link:hover {
+        color: var(--accent-color) !important;
+    }
+
+.btn-link {
+    font-size: 1.1rem;
+    color: var(--text-primary) !important;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+    .btn-link:hover {
+        background-color: rgba(123, 104, 238, 0.1);
+        color: var(--accent-color) !important;
+    }
+
+/* Center and style the search section */
+.search-section {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+    .search-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: var(--accent-color);
+        font-weight: bold;
+    }
+
+.search-form {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+    .form-group label {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+.form-control {
+    font-size: 1.1rem;
+    padding: 12px 20px;
+}
+
+/* Make the table more aesthetic */
+.table {
+    font-size: 1.1rem;
+    margin-top: 2rem;
+}
+
+    .table th {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--accent-color);
+    }
+
+.badge {
+    font-size: 0.9rem;
 }

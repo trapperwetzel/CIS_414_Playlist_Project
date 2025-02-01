@@ -16,6 +16,8 @@ namespace CIS_414_Playlist_Project.Data
         public DbSet<Mood> Moods { get; set; }
         public DbSet<Genre> Genres { get; set; }
 
+        public DbSet<Playlist> Playlists { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -37,6 +39,11 @@ namespace CIS_414_Playlist_Project.Data
                 .WithMany(a => a.Songs)
                 .HasForeignKey(s => s.ArtistId);
 
+            // Configure Playlist-Song relationship
+            modelBuilder.Entity<Playlist>()
+                .HasMany(p => p.Songs);
+                
+                
             // Seed Moods
             modelBuilder.Entity<Mood>().HasData(
                 new Mood("Happy") { MoodId = 1 },
@@ -44,9 +51,8 @@ namespace CIS_414_Playlist_Project.Data
                 new Mood("Energetic") { MoodId = 3 },
                 new Mood("Calm") { MoodId = 4 },
                 new Mood("Romantic") { MoodId = 5 },
-                new Mood("Angry") { MoodId = 6 },
-                new Mood("Melancholic") { MoodId = 7 },
-                new Mood("Upbeat") { MoodId = 8 }
+                new Mood("Angry") { MoodId = 6 }
+                
             );
         }
     }
