@@ -17,12 +17,25 @@ namespace CIS_414_Playlist_Project.Controllers
             _context = context;
         }
 
+        // Home Page 
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        // Privacy Page
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        // Main Search Page 
+        // Main functionality of website
+        public IActionResult SearchPage()
         {
             var viewModel = new SearchViewModel
             {
                 Results = new List<Song>(),
-                // Convert Genre objects to strings
                 AvailableGenres = _context.Genres.Select(g => g.GenreName).Distinct().ToList(),
                 AvailableMoods = _context.Moods.Select(m => m.MoodName).ToList()
             };
@@ -55,11 +68,10 @@ namespace CIS_414_Playlist_Project.Controllers
             }
 
             searchModel.Results = query.ToList();
-            // Convert Genre objects to strings
             searchModel.AvailableGenres = _context.Genres.Select(g => g.GenreName).Distinct().ToList();
             searchModel.AvailableMoods = _context.Moods.Select(m => m.MoodName).ToList();
 
-            return View("Index", searchModel);
+            return View("SearchPage", searchModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

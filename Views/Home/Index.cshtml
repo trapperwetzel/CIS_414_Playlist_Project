@@ -1,106 +1,13 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "HomePage";
 }
 
-@model SearchViewModel
-
 <div class="container mt-4">
-    <div class="search-section">
-        <h2>Search Music</h2>
-
-        <form asp-action="Search" method="post" class="search-form mb-4">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label asp-for="SearchTerm">Search Term</label>
-                        <input asp-for="SearchTerm" class="form-control" placeholder="Enter song or artist name...">
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label asp-for="Genre">Genre</label>
-                        <select asp-for="Genre" class="form-control">
-                            <option value="">-- Select Genre --</option>
-                            @foreach (var genre in Model.AvailableGenres)
-                            {
-                                <option value="@genre">@genre</option>
-                            }
-                        </select>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="form-group">
-                        <label asp-for="Mood">Mood</label>
-                        <select asp-for="Mood" class="form-control">
-                            <option value="">-- Select Mood --</option>
-                            @foreach (var mood in Model.AvailableMoods)
-                            {
-                                <option value="@mood">@mood</option>
-                            }
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary mt-3">Search</button>
-        </form>
-
-        @if (Model.Results?.Any() == true)
-        {
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Artist</th>
-                            <th>Genre</th>
-                            <th>Moods</th>
-                            <th>Release Date</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var song in Model.Results)
-                        {
-                            <tr>
-                                <td>@song.SongTitle</td>
-                                <td>@song.ArtistName</td>
-                                <td>
-                                    @if (song.Genres?.Any() == true)
-                                    {
-                                        foreach (var genre in song.Genres)
-                                        {
-                                            <span class="badge bg-primary me-1">@genre.GenreName</span>
-                                        }
-                                    }
-                                    else
-                                    {
-                                        <span class="text-muted">No genres assigned</span>
-                                    }
-                                </td>
-                                <td>
-                                    @if (song.Moods?.Any() == true)
-                                    {
-                                        foreach (var mood in song.Moods)
-                                        {
-                                            <span class="badge bg-secondary text-dark me-1">@mood.MoodName</span>
-                                        }
-                                    }
-                                    else
-                                    {
-                                        <span class="text-muted">No moods assigned</span>
-                                    }
-                                </td>
-                                <td>@song.DateReleased</td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
-            </div>
-        }
-        else if (Model.SearchTerm != null || Model.Genre != null || Model.Mood != null)
-        {
-            <div class="alert alert-info">
-                No songs found matching your search criteria.
-            </div>
-        }
+    <div class="jumbotron">
+        <h1 class="display-4">Moods</h1>
+        <p class="lead">A simple way tto find the perfect soundtrack for any moment </p>
+        <hr class="my-4">
+        <p>Click the button below to start searching for songs.</p>
+        <a class="btn btn-primary btn-lg" href="@Url.Action("SearchPage", "Home")" role="button">Go to Search</a>
     </div>
 </div>
