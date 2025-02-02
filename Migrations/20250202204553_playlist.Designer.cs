@@ -4,6 +4,7 @@ using CIS_414_Playlist_Project.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CIS_414_Playlist_Project.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250202204553_playlist")]
+    partial class playlist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,12 +124,7 @@ namespace CIS_414_Playlist_Project.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("PlaylistId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Playlists");
                 });
@@ -245,11 +243,6 @@ namespace CIS_414_Playlist_Project.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(21)
-                        .HasColumnType("nvarchar(21)");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
@@ -301,10 +294,6 @@ namespace CIS_414_Playlist_Project.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasDiscriminator().HasValue("IdentityUser");
-
-                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -405,22 +394,6 @@ namespace CIS_414_Playlist_Project.Migrations
                     b.HasIndex("SongsSongId");
 
                     b.ToTable("SongMoods", (string)null);
-                });
-
-            modelBuilder.Entity("CIS_414_Playlist_Project.Models.ApplicationUser", b =>
-                {
-                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
-
-                    b.HasDiscriminator().HasValue("ApplicationUser");
-                });
-
-            modelBuilder.Entity("CIS_414_Playlist_Project.Models.Playlist", b =>
-                {
-                    b.HasOne("CIS_414_Playlist_Project.Models.ApplicationUser", "User")
-                        .WithMany("Playlists")
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("CIS_414_Playlist_Project.Models.Song", b =>
@@ -527,11 +500,6 @@ namespace CIS_414_Playlist_Project.Migrations
             modelBuilder.Entity("CIS_414_Playlist_Project.Models.Playlist", b =>
                 {
                     b.Navigation("Songs");
-                });
-
-            modelBuilder.Entity("CIS_414_Playlist_Project.Models.ApplicationUser", b =>
-                {
-                    b.Navigation("Playlists");
                 });
 #pragma warning restore 612, 618
         }

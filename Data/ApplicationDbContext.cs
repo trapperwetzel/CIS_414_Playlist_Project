@@ -2,6 +2,10 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
+
+
+
+
 namespace CIS_414_Playlist_Project.Data
 {
     public class ApplicationDbContext : IdentityDbContext
@@ -10,7 +14,7 @@ namespace CIS_414_Playlist_Project.Data
             : base(options)
         {
         }
-
+           
         public DbSet<Artist> Artists { get; set; }
         public DbSet<Song> Songs { get; set; }
         public DbSet<Mood> Moods { get; set; }
@@ -41,9 +45,15 @@ namespace CIS_414_Playlist_Project.Data
 
             // Configure Playlist-Song relationship
             modelBuilder.Entity<Playlist>()
-                .HasMany(p => p.Songs);
+                .HasOne(p => p.User)
+                .WithMany(u => u.Playlists)
+                .HasForeignKey(p => p.UserId)
+                .IsRequired(false);
                 
+            
                 
+
+
             // Seed Moods
             modelBuilder.Entity<Mood>().HasData(
                 new Mood("Happy") { MoodId = 1 },
