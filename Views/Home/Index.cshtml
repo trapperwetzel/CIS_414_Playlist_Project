@@ -1,13 +1,14 @@
 ﻿@{
     ViewData["Title"] = "HomePage";
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
 }
 
-<div class="container mt-4">
-    <div class="jumbotron">
+<div class="mainHomeText">
+    <div class="jumbotron text-center p-5 rounded" style="background-color: var(--dark-surface); color: var(--text-primary);">
         <h1 class="display-4">Moods</h1>
-        <p class="lead">A simple way tto find the perfect soundtrack for any moment </p>
-        <hr class="my-4">
+        <p class="lead">A simple way to find the perfect soundtrack for any moment.</p>
+        <hr class="my-4" style="border-color: var(--text-secondary);">
         <p>Click the button below to start searching for songs.</p>
-        <a class="btn btn-primary btn-lg" href="@Url.Action("SearchPage", "Home")" role="button">Go to Search</a>
+        <a class="btn btn-primary btn-lg" href="/Home/SearchPage" role="button">Go to Search</a>
     </div>
 </div>

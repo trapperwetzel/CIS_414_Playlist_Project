@@ -1,5 +1,4 @@
 ﻿using CIS_414_Playlist_Project.Data;
-using CIS_414_Playlist_Project.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
