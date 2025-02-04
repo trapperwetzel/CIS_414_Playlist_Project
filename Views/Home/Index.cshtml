@@ -1,9 +1,16 @@
-﻿@{
+﻿<head>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+@{
     ViewData["Title"] = "HomePage";
     Layout = "~/Views/Shared/_Layout.cshtml"; 
 }
 
-<div class="mainHomeText">
+
+
+<div class="animate__animated animate__fadeInRight">
     <div class="jumbotron text-center p-5 rounded" style="background-color: var(--dark-surface); color: var(--text-primary);">
         <h1 class="display-4">Moods</h1>
         <p class="lead">A simple way to find the perfect soundtrack for any moment.</p>

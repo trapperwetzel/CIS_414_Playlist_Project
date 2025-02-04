@@ -18,11 +18,10 @@ html, body {
 /* Flex container for the main content */
 .container {
     flex: 1;
-    background-color: var(--dark-surface);
     border-radius: 8px;
     padding: 20px;
     margin-top: 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    
 }
 
 /* Use !important for body background to ensure it overrides other styles */
@@ -60,7 +59,7 @@ body {
     transition: color 0.3s ease;
 }
 
-    .nav-link:hover {
+.nav-link:hover {
         color: var(--accent-color) !important;
     }
 
@@ -74,10 +73,14 @@ body {
     transition: all 0.3s ease;
 }
 
-    .btn-link:hover {
+.btn-link:hover {
         background-color: rgba(123, 104, 238, 0.1);
         color: var(--accent-color) !important;
     }
+
+
+
+
 
 /* Center and style the search section */
 .search-section {
@@ -85,12 +88,15 @@ body {
     padding: 3rem 0;
 }
 
-    .search-section h2 {
+.search-section h2 {
         font-size: 2.5rem;
         margin-bottom: 2rem;
         color: var(--accent-color);
         font-weight: bold;
     }
+
+
+
 
 /* Form styling */
 .search-form {
@@ -102,7 +108,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-    .form-group label {
+.form-group label {
         font-size: 1.2rem;
         margin-bottom: 0.75rem;
     }
@@ -118,7 +124,7 @@ body {
     margin-top: 2rem;
 }
 
-    .table th {
+.table th {
         font-size: 1.2rem;
         font-weight: 600;
         color: var(--accent-color);
