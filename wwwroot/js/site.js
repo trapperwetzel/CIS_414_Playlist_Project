@@ -1,4 +1,18 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿const titleHeader = document.getElementById('titleHeader');
+const artistHeader = document.getElementById('artistHeader');
+const genreHeader = document.getElementById('genreHeader');
+const moodsHeader = document.getElementById("moodsHeader");
+const releasedateHeader = document.getElementById("releasedateheader");
+const addtoplaylistHeader = document.getElementById("addtoplaylistheader");
+const songtitle = document.getElementById("songtitle");
+const songartist = document.getElementById("songartist");
+const songgenre = document.getElementById("songgenre");
+const songmoods = document.getElementById("songmoods");
+const songreleasedate = document.getElementById("datereleased");
+const playlistbutton = document.getElementById("playlistbutton");
 
-// Write your JavaScript code.
+
+
+const td = document.createElement("td");
+
+

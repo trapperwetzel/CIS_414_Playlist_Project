@@ -1,9 +1,9 @@
+
+
 /* Dark Theme with higher specificity */
 :root {
     --dark-bg: #121212;
-    
-    
-    --text-primary: #ffffff;
+    --text-primary: white;
     --text-secondary: #b3b3b3;
 }
 
@@ -19,8 +19,7 @@ html, body {
 .container {
     flex: 1;
     border-radius: 8px;
-    padding: 20px;
-    margin-top: 2rem;
+    padding: 0px;
     
 }
 
@@ -33,57 +32,156 @@ body {
 /* Override navbar styles */
 .navbar {
     background-color: var(--dark-surface) !important;
+    align-content: center;
 }
 
-.nav-link.text-dark {
-    color: var(--text-primary) !important;
+.animate__animated.animate__slideInUp{
+    --animate-duration: 2s;
 }
+
+#moodsTitleText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: calc(1.475rem + 2.7vw);
+    color: antiquewhite;
+    font-family: Georgia, serif;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212, 0 22px 30px rgba(0, 0, 0, 0.9);
+}
+
+
+
+
+
+
 
 /* Auth container */
 .auth-container {
     display: flex;
     justify-content: flex-end;
-    padding: 10px;
+    
 }
 
-/* Navbar navigation */
-.navbar-nav {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
 
-.nav-link {
-    font-size: 1.1rem;
-    color: var(--text-primary) !important;
-    transition: color 0.3s ease;
-}
 
-.nav-link:hover {
-        color: var(--accent-color) !important;
-    }
 
-/* Button link */
-.btn-link {
-    font-size: 1.1rem;
-    color: var(--text-primary) !important;
+
+
+.custom-nav-link {
+    position: relative;
+    color: #fff !important;
     text-decoration: none;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, #6b46c1, #805ad5);
+    border-radius: 25px;
     transition: all 0.3s ease;
+    margin: 0 10px;
 }
 
-.btn-link:hover {
-        background-color: rgba(123, 104, 238, 0.1);
-        color: var(--accent-color) !important;
+    .custom-nav-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
+    }
+
+    .custom-nav-link:active {
+        transform: translateY(0);
+    }
+
+    .custom-nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #805ad5, #6b46c1);
+        border-radius: 25px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+
+    .custom-nav-link:hover::before {
+        opacity: 1;
     }
 
 
+
+
+
+
+
+.btn {
+    text-align: center;
+    color: antiquewhite;
+    font-family: Georgia, serif;
+    letter-spacing: .1em;
+}
+
+
+.btn-bottom-stripe {
+    border: 0px;
+    cursor: pointer;
+    user-select: text;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 16px 56px 22px;
+    
+    
+    transition: 1s;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn-bottom-stripe::after {
+        content: "";
+        
+        height: 7px;
+        width: 100%;
+        backface-visibility: hidden;
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        background-size: 7px 7px;
+    }
+
+.btn-bottom-stripe:hover {
+        color: rgb(255, 255, 255);
+    }
+
+.btn-bottom-stripe:hover::after {
+            background-image: repeating-linear-gradient(45deg, rgb(255, 255, 255), rgb(255, 255, 255) 1px, transparent 2px, transparent 5px);
+            animation: 12s linear infinite forwards stripe-slide;
+        }
+
+.btn-bottom-stripe--purple {
+    color: antiquewhite;
+    border: 2px solid rgb(61, 52, 139);
+}
+
+.btn-bottom-stripe--purple::after {
+        border-top: 2px solid rgb(61, 52, 139);
+        background-image: repeating-linear-gradient(45deg, rgb(61, 52, 139), rgb(61, 52, 139) 1px, transparent 2px, transparent 5px);
+    }
+
+.btn-bottom-stripe--purple:hover {
+        background-color: rgb(61, 52, 139);
+    }  
+
+
+/* SEARCH SECTION CSS */
 
 
 
 /* Center and style the search section */
 .search-section {
+   --animate-duration: 2s;
     text-align: center;
     padding: 3rem 0;
 }
