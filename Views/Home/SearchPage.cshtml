@@ -89,12 +89,13 @@
                                 </td>
                                 <td>@song.DateReleased.ToString()</td>
                                 <td>
-                                    <form asp-controller="Playlist" asp-action="AddToPlaylist" method="post">
-                                        <input type="hidden" name="songId" value="@song.SongId" />
-                                        <button type="submit" class="btn btn-bottom-stripe btn-bottom-stripe--purple">
-                                            Add
-                                        </button>
-                                    </form>
+                                    <button type="button"
+                                        class="btn btn-bottom-stripe btn-bottom-stripe--purple add-to-playlist-button"
+                                        data-song-id="@song.SongId"
+                                        data-song-title="@song.SongTitle"
+                                        data-song-artist="@song.ArtistName">
+                                        Add
+                                    </button>
                                 </td>
                             </tr>
                         }
@@ -110,3 +111,97 @@
         }
     </div>
 </div>
+
+<div class="playlistContainer">
+    <h2>Current Playlist</h2>
+    <table id="playlistTable">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Artist</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <button id="savePlaylistBtn">Save Playlist</button>
+</div>
+
+<script>
+    // 1. We'll keep track of the selected songs in a simple array
+    const tempPlaylist = [];
+
+    // 2. Grab all the "Add to playlist" buttons
+    const addButtons = document.querySelectorAll('.add-to-playlist-button');
+
+    // 3. The table body where we'll show the current playlist
+    const playlistTableBody = document.querySelector('#playlistTable tbody');
+
+    // 4. Attach a click event to each button
+    addButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const songId = button.getAttribute('data-song-id');
+            const title = button.getAttribute('data-song-title');
+            const artist = button.getAttribute('data-song-artist');
+
+            // Check if we already have this song in our temp playlist
+            const alreadyInPlaylist = tempPlaylist.some(item => item.songId == songId);
+            if (!alreadyInPlaylist) {
+                // Add to our in-memory array
+                tempPlaylist.push({ songId: songId, title: title, artist: artist });
+
+                // Update the DOM: create a new row
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${title}</td>
+                    <td>${artist}</td>
+                `;
+                playlistTableBody.appendChild(row);
+            }
+        });
+    });
+
+    // 5. Handle the “Save Playlist” button
+    const savePlaylistBtn = document.getElementById('savePlaylistBtn');
+    savePlaylistBtn.addEventListener('click', () => {
+        // Optionally prompt for a playlist name, or have a text box on the page
+        const playlistName = prompt("Enter a name for your playlist:");
+        if (!playlistName) {
+            return; // user clicked cancel or empty
+        }
+
+        // We'll send the array to the server
+        // Build the data payload
+        const dataToSend = {
+            playlistName: playlistName,
+            songs: tempPlaylist // an array of objects: { songId, title, artist }
+        };
+
+        // Use fetch to POST this data to your server
+        fetch('/Playlist/SaveTempPlaylist', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // If you use AntiForgery tokens, add them here or remove [ValidateAntiForgeryToken]
+            },
+            body: JSON.stringify(dataToSend)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Error saving playlist");
+            }
+            return response.json();
+        })
+        .then(result => {
+            alert(`Playlist saved! ID = ${result.playlistId}`);
+            // Optionally redirect or clear the temp playlist
+            window.location.href = '/Playlist/Details/' + result.playlistId;
+        })
+        .catch(error => {
+            console.error(error);
+            alert("Failed to save playlist.");
+        });
+    });
+</script>

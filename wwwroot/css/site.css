@@ -240,3 +240,56 @@ body {
     text-align: center;
     width: 100%;
 }
+
+
+
+playlistContainer {
+    /* Float the container to the left */
+    float: left;
+    /* A dark background with white text for contrast */
+    background-color: white;
+    color: black;
+    /* Some spacing and styling */
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 6px;
+    /* Optional drop shadow for a nicer look */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.playlistContainer h2 {
+    margin-top: 0;
+}
+
+#playlistTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    #playlistTable thead {
+        background-color: #333;
+    }
+
+    #playlistTable th,
+    #playlistTable td {
+        border: 1px solid #444;
+        padding: 0.5rem;
+    }
+
+/* Button styling */
+#savePlaylistBtn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    /* Optional hover effect on the button */
+    #savePlaylistBtn:hover {
+        background-color: #777;
+    }
+

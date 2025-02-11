@@ -32,5 +32,10 @@ namespace CIS_414_Playlist_Project.Models
             this.Songs = new List<Song>();
         }
 
+        public void AddSongToPlaylist(Song aSong)
+        {
+            Songs.Add(aSong);
+        }
+
     }
 }
