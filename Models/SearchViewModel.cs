@@ -8,5 +8,6 @@
         public List<Song> Results { get; set; } = new List<Song>();
         public List<string> AvailableMoods { get; set; } = new List<string>();
         public List<string> AvailableGenres { get; set; } = new List<string>();
+        public Playlist CurrentPlaylist { get; set; } = new Playlist();
     }
 }

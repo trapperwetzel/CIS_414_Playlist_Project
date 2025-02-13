@@ -45,11 +45,11 @@ namespace CIS_414_Playlist_Project.Data
 
             // Configure Playlist-Song relationship
             modelBuilder.Entity<Playlist>()
-                .HasOne(p => p.User)
+                .HasMany(p => p.Songs)
                 .WithMany(u => u.Playlists)
-                .HasForeignKey(p => p.UserId)
-                .IsRequired(false);
-                
+                .UsingEntity(j => j.ToTable("PlaylistSongs"));
+
+           
             
                 
 

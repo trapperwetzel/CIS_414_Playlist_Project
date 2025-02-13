@@ -14,21 +14,17 @@ namespace CIS_414_Playlist_Project.Models
 
         [Required]
         public string PlaylistName { get; set; } = string.Empty;    
-        public string PlaylistDescription { get; set; } = string.Empty;
-
-        [ForeignKey("User")]
-        public string UserId { get; set; }
         
-        public ApplicationUser User { get; set; }
         public ICollection<Song> Songs { get; set; } = new List<Song>();
 
 
-        public Playlist() { } 
+        public Playlist() { }
 
+        
         public Playlist(string playlistName)
         {
             this.PlaylistName = playlistName;
-            this.PlaylistDescription = PlaylistDescription;
+            
             this.Songs = new List<Song>();
         }
 

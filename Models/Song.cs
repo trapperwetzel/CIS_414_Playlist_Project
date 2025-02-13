@@ -26,7 +26,8 @@ namespace CIS_414_Playlist_Project.Models
         public virtual Artist Artist { get; set; }
         public virtual ICollection<Genre> Genres { get; set; }
         public virtual ICollection<Mood> Moods { get; set; }
-        
+        public ICollection<Playlist> Playlists { get; set; } = new List<Playlist>();
+
         public Song()
         {
             SongTitle = "N/A";

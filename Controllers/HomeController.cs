@@ -71,6 +71,12 @@ namespace CIS_414_Playlist_Project.Controllers
             searchModel.AvailableGenres = _context.Genres.Select(g => g.GenreName).Distinct().ToList();
             searchModel.AvailableMoods = _context.Moods.Select(m => m.MoodName).ToList();
 
+            // If the request is an AJAX request, return the partial view
+            if (Request.Headers["X-Requested-With"] == "XMLHttpRequest")
+            {
+                return PartialView("_SearchResults", searchModel);
+            }
+
             return View("SearchPage", searchModel);
         }
 
